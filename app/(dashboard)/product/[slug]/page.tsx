@@ -4,7 +4,7 @@ export default function page() {
 	return (
 		<div className="w-full px-3 lg:px-20 pt-22 pb-10">
 			<h2 className="text-lg lg:text-2xl font-semibold">Product Details</h2>
-			<div className="grid gap-14 lg:gap-20 lg:grid-cols-2 mt-4 w-full min-h-dvh">
+			<div className="grid gap-8 lg:gap-20 lg:grid-cols-2 mt-4 w-full min-h-dvh">
 				<div className="">
 					<Image
 						src={productImg}
@@ -12,7 +12,7 @@ export default function page() {
 					/>
 				</div>
 				<div className="flex flex-col space-y-4 text-black">
-					<p className="text-2xl lg:text-4xl font-semibold leading-tight">
+					<p className="text-2xl lg:text-4xl font-bold leading-tight">
 						Lightweight Puffer Jacket With a Hood
 					</p>
 					<div className="flex space-x-4">
