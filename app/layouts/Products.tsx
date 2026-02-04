@@ -2,17 +2,22 @@
 
 import { Icon } from "@iconify/react";
 import Skeleton from "./Skeleton";
-import axios from "axios";
 import getProducts from "../libs/getProducts";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../redux/ProductSlice";
+import { ProductCard } from "../components/ProductCard";
 
 export default function Products() {
+	const dispatch = useDispatch();
+	const products = useSelector((state: any) => state.products.list);
 	// const products = await getProducts();
 	// console.log("products:", products);
 	useEffect(() => {
 		const fetchProducts = async () => {
 			const products = await getProducts();
 			if (products.products && products.products.length > 0) {
+				dispatch(setProducts(products.products));
 				console.log("products:", products);
 			} else {
 				console.log("No products found.");
@@ -34,7 +39,16 @@ export default function Products() {
 				<span>Add New Product</span>
 			</button>
 			<div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 lg:grid-cols-4 mt-5 ">
-				<Skeleton />
+				{products && products.length > 0 ? (
+					products.map((product: any) => (
+						<ProductCard
+							product={product}
+							key={product.id}
+						/>
+					))
+				) : (
+					<Skeleton />
+				)}
 			</div>
 		</div>
 	);

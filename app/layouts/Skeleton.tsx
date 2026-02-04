@@ -5,7 +5,7 @@ export default function Skeleton() {
 		<>
 			<div className="bg-white rounded-[20px] h-125 animate-pulse shadow-lg p-1.5 lg:p-4 flex justify-center items-center flex-col">
 				<div className="w-full bg-[#F7F7F7] h-1/2 rounded-[20px] flex justify-center items-center cursor-pointer group relative overflow-hidden">
-					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400">
+					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400 text-center mx-auto">
 						Loading Product...
 					</div>
 				</div>
@@ -21,7 +21,7 @@ export default function Skeleton() {
 			</div>
 			<div className="bg-white rounded-[20px] h-125 animate-pulse shadow-lg p-1.5 lg:p-4 flex justify-center items-center flex-col">
 				<div className="w-full bg-[#F7F7F7] h-1/2 rounded-[20px] flex justify-center items-center cursor-pointer group relative overflow-hidden">
-					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400">
+					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400 text-center mx-auto">
 						Loading Product...
 					</div>
 				</div>
@@ -37,7 +37,7 @@ export default function Skeleton() {
 			</div>
 			<div className="bg-white rounded-[20px] h-125 animate-pulse shadow-lg p-1.5 lg:p-4 flex justify-center items-center flex-col">
 				<div className="w-full bg-[#F7F7F7] h-1/2 rounded-[20px] flex justify-center items-center cursor-pointer group relative overflow-hidden">
-					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400">
+					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400 text-center mx-auto">
 						Loading Product...
 					</div>
 				</div>
@@ -53,7 +53,9 @@ export default function Skeleton() {
 			</div>
 			<div className="bg-white rounded-[20px] h-125 animate-pulse shadow-lg p-1.5 lg:p-4 flex justify-center items-center flex-col">
 				<div className="w-full bg-[#F7F7F7] h-1/2 rounded-[20px] flex justify-center items-center cursor-pointer group relative overflow-hidden">
-					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400">Loading Product...</div>
+					<div className="w-3/4 lg:w-auto text-[12px] text-gray-400 text-center mx-auto">
+						Loading Product...
+					</div>
 				</div>
 				<div className="flex flex-col h-1/2 w-5/7 mx-auto justify-center items-center">
 					<p className="h-2 bg-gray-200 mb-1 lg:mb-2 w-full rounded-full"></p>
