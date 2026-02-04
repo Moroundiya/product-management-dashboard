@@ -2,6 +2,7 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import Slidebar from "./Slidebar";
+import Link from "next/link";
 
 export default function Navbar() {
 	const [showSidebar, setShowSidebar] = useState(false);
@@ -11,7 +12,11 @@ export default function Navbar() {
 				showSidebar={showSidebar}
 				setShowSidebar={setShowSidebar}
 			/>
-			<h1 className="text-xl lg:text-2xl font-bold capitalize">dashboard</h1>
+			<Link
+				href="/"
+				className="text-xl lg:text-2xl font-bold capitalize">
+				dashboard
+			</Link>
 			<div
 				className="relative cursor-pointer"
 				onClick={() => setShowSidebar(true)}>
