@@ -39,7 +39,7 @@ export const ProductCard = ({
 				<p className="text-[#54595F] text-[14px] lg:text-sm lg:text-md mb-1 lg:mb-2 capitalize">
 					{category}
 				</p>
-				<p className="font-semibold uppercase text-xl md:text-[1.05rem] lg:text-xl text-center mx-auto w-full text-black">
+				<p className="font-semibold uppercase text-xl px-3 md:text-[1.05rem] lg:text-xl text-center mx-auto w-full text-black">
 					{title}
 				</p>
 				<p className="text-[#54595F] lg:my-2 text-xl">${price}</p>

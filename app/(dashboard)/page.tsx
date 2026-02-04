@@ -1,3 +1,4 @@
+import PaginatedList from "../components/Pagination";
 import Filter from "../layouts/Filter";
 import Products from "../layouts/Products";
 
@@ -6,6 +7,7 @@ export default function Home() {
 		<div className="bg-[#f5f7eb] text-white w-full min-h-dvh relative">
 			<Filter />
 			<Products />
+			{/* <PaginatedList /> */}
 		</div>
 	);
 }
