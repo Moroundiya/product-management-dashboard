@@ -4,7 +4,13 @@ import { Icon } from "@iconify/react";
 import { ListBox, Select } from "@heroui/react";
 import { SearchField } from "@heroui/react";
 
-export default function Filter() {
+export default function Filter({
+	setSearch,
+	setSort,
+}: {
+	setSearch: (value: string) => void;
+	setSort: (value: string) => void;
+}) {
 	return (
 		<div className="w-full px-3 space-y-3 lg:space-y-0 lg:px-20 lg:flex items-center justify-between pt-22 pb-10">
 			<div className="flex items-center">
@@ -19,7 +25,8 @@ export default function Filter() {
 				</div>
 				<Select
 					className="w-50 lg:w-[256px] text-sm lg:text-base"
-					placeholder="Select one">
+					placeholder="Select one"
+					onChange={(value) => setSort(value as string)}>
 					<Select.Trigger className="ms-4 h-10 rounded-lg text-sm lg:text-base outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0">
 						<Select.Value className="text-sm lg:text-base" />
 						<Select.Indicator />
@@ -56,7 +63,7 @@ export default function Filter() {
 							className="w-full lg:w-70 text-sm lg:text-base"
 							placeholder="Search..."
 							onChange={(e) => {
-								console.log(e.target.value);
+								setSearch(e.target.value);
 							}}
 						/>
 						<SearchField.ClearButton />
