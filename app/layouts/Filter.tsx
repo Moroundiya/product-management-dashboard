@@ -62,9 +62,7 @@ export default function Filter({
 						<SearchField.Input
 							className="w-full lg:w-70 text-sm lg:text-base"
 							placeholder="Search..."
-							onChange={(e) => {
-								setSearch(e.target.value);
-							}}
+							onChange={(e) => setSearch(e.target.value)}
 						/>
 						<SearchField.ClearButton />
 					</SearchField.Group>

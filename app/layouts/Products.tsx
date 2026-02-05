@@ -6,7 +6,7 @@ import getProducts from "../libs/getProducts";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/ProductSlice";
-import PaginatedList from "../components/Pagination";
+import { PaginatedList } from "../components/Pagination";
 
 export default function Products({
 	search,
