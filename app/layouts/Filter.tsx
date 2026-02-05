@@ -1,3 +1,5 @@
+"use client";
+
 import { Icon } from "@iconify/react";
 import { ListBox, Select } from "@heroui/react";
 import { SearchField } from "@heroui/react";
@@ -53,6 +55,9 @@ export default function Filter() {
 						<SearchField.Input
 							className="w-full lg:w-70 text-sm lg:text-base"
 							placeholder="Search..."
+							onChange={(e) => {
+								console.log(e.target.value);
+							}}
 						/>
 						<SearchField.ClearButton />
 					</SearchField.Group>

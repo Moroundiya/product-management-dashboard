@@ -10,6 +10,7 @@ import { ProductCard } from "../components/ProductCard";
 import PaginatedList from "../components/Pagination";
 
 export default function Products() {
+	let searchProduct;
 	const dispatch = useDispatch();
 	const products = useSelector((state: any) => state.products.list);
 	// const products = await getProducts();

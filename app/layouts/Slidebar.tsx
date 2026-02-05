@@ -30,8 +30,16 @@ export default function Slidebar({
 				</span>
 				<div className="w-full h-auto mt-16 text-black text-base font-medium">
 					<div className="flex flex-col space-y-5">
-						<Link href="/">Dashboard</Link>
-						<Link href="/profile">Profile</Link>
+						<Link
+							href="/"
+							onClick={() => setShowSidebar(false)}>
+							Dashboard
+						</Link>
+						<Link
+							href="/profile"
+							onClick={() => setShowSidebar(false)}>
+							Profile
+						</Link>
 					</div>
 				</div>
 			</div>

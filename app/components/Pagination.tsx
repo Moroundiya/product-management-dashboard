@@ -29,7 +29,7 @@ const PaginatedList = () => {
 			justifyContent="center"
 			className="pb-8">
 			<div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 lg:grid-cols-4 mt-5 ">
-				{paginatedItems.map((product) => (
+				{paginatedItems?.map((product) => (
 					<ProductCard
 						product={product}
 						key={product.id}
