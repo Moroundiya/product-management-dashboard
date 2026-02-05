@@ -9,7 +9,7 @@ export default function Navbar() {
 	const [showSidebar, setShowSidebar] = useState(false);
 	return (
 		<div className="w-full h-auto relative">
-			<nav className="bg-[#7A9E7E] py-3 px-3 text-white fixed z-50 w-full top-0 left-0 flex justify-between items-center lg:px-10">
+			<nav className="bg-[#7A9E7E] py-3 px-3 text-white fixed z-50 w-full top-0 left-0 flex justify-between items-center lg:px-20">
 				<Slidebar
 					showSidebar={showSidebar}
 					setShowSidebar={setShowSidebar}

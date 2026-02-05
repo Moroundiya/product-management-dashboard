@@ -1,22 +1,25 @@
 import { Icon } from "@iconify/react";
-import { Label, ListBox, Select } from "@heroui/react";
+import { ListBox, Select } from "@heroui/react";
+import { SearchField } from "@heroui/react";
 
 export default function Filter() {
 	return (
-		<div className="w-full px-3 lg:px-10 flex items-center justify-between pt-22 pb-10">
+		<div className="w-full px-3 space-y-3 lg:space-y-0 lg:px-20 lg:flex items-center justify-between pt-22 pb-10">
 			<div className="flex items-center">
 				<div className="flex items-center">
 					<Icon
 						icon="solar:sort-bold"
 						className="text-gray-800 text-2xl"
 					/>
-					<span className="ml-2 text-black font-medium">Sort By:</span>
+					<span className="ml-2 text-black font-medium text-sm lg:text-base">
+						Sort By:
+					</span>
 				</div>
 				<Select
-					className="w-[256px]"
+					className="w-50 lg:w-[256px] text-sm lg:text-base"
 					placeholder="Select one">
-					<Select.Trigger className="ms-4  rounded-lg  outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0">
-						<Select.Value />
+					<Select.Trigger className="ms-4 h-10 rounded-lg text-sm lg:text-base outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0">
+						<Select.Value className="text-sm lg:text-base" />
 						<Select.Indicator />
 					</Select.Trigger>
 					<Select.Popover>
@@ -42,6 +45,18 @@ export default function Filter() {
 						</ListBox>
 					</Select.Popover>
 				</Select>
+			</div>
+			<div>
+				<SearchField name="search">
+					<SearchField.Group className="rounded-lg h-10 ring-0 outline-none focus-within:ring-0 focus-within:outline-none">
+						<SearchField.SearchIcon />
+						<SearchField.Input
+							className="w-full lg:w-70 text-sm lg:text-base"
+							placeholder="Search..."
+						/>
+						<SearchField.ClearButton />
+					</SearchField.Group>
+				</SearchField>
 			</div>
 		</div>
 	);
