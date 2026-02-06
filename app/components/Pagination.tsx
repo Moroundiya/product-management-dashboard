@@ -58,12 +58,16 @@ export const PaginatedList = ({
 			justifyContent="center"
 			className="pb-8">
 			<div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 lg:grid-cols-4 mt-5">
-				{paginatedItems.map((product: productType | any) => (
-					<ProductCard
-						product={product}
-						key={product.id}
-					/>
-				))}
+				{paginatedItems.length === 0 ? (
+					<p className=" text-black w-full">No product found</p>
+				) : (
+					paginatedItems.map((product: productType | any) => (
+						<ProductCard
+							product={product}
+							key={product.id}
+						/>
+					))
+				)}
 			</div>
 			{filteredItems.length > itemsPerPage && (
 				<div className="w-full mx-auto flex justify-center items-center">
@@ -71,7 +75,7 @@ export const PaginatedList = ({
 						count={Math.ceil(filteredItems.length / itemsPerPage)}
 						page={page}
 						onChange={handleChange}
-						color="secondary"
+						color="standard"
 					/>
 				</div>
 			)}
