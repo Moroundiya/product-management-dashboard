@@ -3,7 +3,7 @@ import getProducts from "./getProducts";
 export const fetchAllProducts = async () => {
 	const allProducts = await getProducts();
 	if (allProducts && allProducts.length > 0) {
-		const modifiedProducts = allProducts.map((item) => ({
+		const modifiedProducts = allProducts.map((item: any) => ({
 			id: Number(item.id),
 			title: item.title,
 			description: item.description,

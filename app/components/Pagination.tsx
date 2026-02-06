@@ -71,7 +71,7 @@ export const PaginatedList = ({
 						count={Math.ceil(filteredItems.length / itemsPerPage)}
 						page={page}
 						onChange={handleChange}
-						color="success"
+						color="secondary"
 					/>
 				</div>
 			)}

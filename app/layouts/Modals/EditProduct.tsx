@@ -11,7 +11,7 @@ export function EditProduct({
 }: {
 	openEditModal: boolean;
 	setOpenEditModal: (open: boolean) => void;
-	product: object;
+	product: any;
 }) {
 	return (
 		<Modal

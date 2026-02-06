@@ -185,7 +185,7 @@ export function AddProduct({
 											onChange={(e) => {
 												const selectedFile = e.target.files?.[0];
 												if (!selectedFile) return;
-												setFile(e.target.files[0]?.name);
+												setFile(e.target?.files[0]?.name);
 												setPreview(URL.createObjectURL(selectedFile));
 											}}
 											className="w-full h-full absolute opacity-0 top-0 left-0 z-10"
