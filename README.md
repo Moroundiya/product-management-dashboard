@@ -5,34 +5,41 @@ This project supports full CRUD operations, image uploads, sorting, searching, a
 
 <h3>Features</h3>
 
-  ●  Product listing with pagination
-  ●  View single product details
-  ●  Add, edit, and delete products
-  ●  Search and sort products (Latest, Oldest, A–Z)
-  ●  Redux state management
-  ●  MockAPI backend
-  ●  Responsive UI 
-  ●  Instant UI updates without page reload
+<ul>
+  <li>Product listing with pagination</li>
+  <li>View single product details</li>
+  <li>Add, edit, and delete products</li>
+  <li>Search and sort products (Latest, Oldest, A–Z)</li>
+  <li>Redux state management</li>
+  <li>MockAPI backend</li>
+  <li>Responsive UI</li>
+  <li>Instant UI updates without page reload</li>
+</ul>
 
 <h3>Tech Stack </h3>
 
-  ●  Next.js 13+ (App Router)
-  ●  React
-  ●  Redux Toolkit
-  ●  Axios
-  ●  MockAPI
-  ●  Material UI
-  ●  Tailwind CSS
-  ●  HeroUI
+<ul>
+  <li>Next.js 13+ (App Router)</li>
+  <li>React</li>
+  <li>Redux Toolkit</li>
+  <li>Axios</li>
+  <li>Next.js 13+ (App Router)</li>
+  <li>MockAPI</li>
+  <li>Tailwind CSS</li>
+  <li>Material UI</li>
+  <li>HeroUI</li>
+</ul>
 
 <h3>Setup</h3>
 
 Make sure the following tools are installed on your system:
 
-  ●  Node.js (v18 or higher recommended)
-  ●  npm (comes with Node.js)
-  ●  Git
-  
+```txt
+● Node.js (v18 or higher recommended)
+● npm (comes with Node.js)
+● Git
+```
+
 Check versions (optional):
 node -v
 npm -v
@@ -40,14 +47,16 @@ git --version
 
 <h3>Getting Started (Local Setup)</h3>
 
-  ●  Clone the Repository
-    git clone https://github.com/your-username/your-repo-name.git
+```txt
+● Clone the Repository
+git clone https://github.com/your-username/your-repo-name.git
 
-  ●  Navigate into the project directory:
-    cd your-repo-name
+● Navigate into the project directory:
+cd your-repo-name
 
-  ●  Install Dependencies
-    npm install
+● Install Dependencies
+npm install
+```
 
 This installs all required packages.
 
@@ -56,13 +65,12 @@ This installs all required packages.
 Start the development server:
 npm run dev
 
-
 <h3>Open your browser and visit:</h3>
     http://localhost:3000
 
+<h3> Folder Structure (Overview) </h3>
 
-<h3> Folder Structure (Overview) </h3> 
-
+```txt
 app/
  ├─ (dashboard)
  │   └─ product/
@@ -77,6 +85,7 @@ app/
  ├─ redux/
  ├─ lib/
  └─ page.tsx
+```
 
 <h3>ScreenShots</h3>
 
