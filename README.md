@@ -102,8 +102,8 @@ app/
 </p>
 
 <p align="center">
-   <img src="/public/images/products-mobile.png" width="900" />
+   <img src="/public/images/products-mobile.png" width="500" />
 </p>
 <p align="center">
-   <img src="/public/images/single-product-mobile.png" width="900" />
+   <img src="/public/images/single-product-mobile.png" width="500" />
 </p>
