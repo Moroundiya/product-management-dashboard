@@ -4,6 +4,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { useSelector } from "react-redux";
 import { ProductCard } from "./ProductCard";
+import { productType } from "../types/product";
 
 export const PaginatedList = ({
 	search,
@@ -41,7 +42,7 @@ export const PaginatedList = ({
 		return items;
 	}, [products, search, sort]);
 
-	const handleChange = (event, value) => {
+	const handleChange = (event: any, value: number) => {
 		setPage(value);
 		window.scrollTo({ top: 0 });
 	};
@@ -57,7 +58,7 @@ export const PaginatedList = ({
 			justifyContent="center"
 			className="pb-8">
 			<div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 lg:grid-cols-4 mt-5">
-				{paginatedItems.map((product) => (
+				{paginatedItems.map((product: productType | any) => (
 					<ProductCard
 						product={product}
 						key={product.id}
