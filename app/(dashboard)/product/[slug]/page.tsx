@@ -29,8 +29,6 @@ export default function Page() {
 			.then((res) => res.data)
 			.catch((err) => err.message);
 
-		// console.log("res, is", res);
-
 		if (res) {
 			console.log("res is", res);
 			const updatedProducts = await getProducts();
