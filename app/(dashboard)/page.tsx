@@ -4,8 +4,9 @@ import Filter from "../layouts/Filter";
 import Products from "../layouts/Products";
 
 export default function Home() {
-	const [search, setSearch] = useState("");
-	const [sort, setSort] = useState("");
+	const [search, setSearch] = useState<string>("");
+	const [sort, setSort] = useState<string>("latest");
+	const [openAddModal, setOpenAddModal] = useState<boolean>(false);
 	return (
 		<div className="bg-[#f5f7eb] text-white w-full min-h-dvh relative">
 			<Filter
@@ -15,7 +16,10 @@ export default function Home() {
 			<Products
 				search={search}
 				sort={sort}
+				openAddModal={openAddModal}
+				setOpenAddModal={setOpenAddModal}
 			/>
+
 			{/* <PaginatedList /> */}
 		</div>
 	);

@@ -3,15 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const ProductCard = ({
-	product: { id, images, price, title, category, availabilityStatus },
+	product: { id, image, price, title, category, availability },
 }: {
 	product: {
 		id: number;
-		images: string[];
+		image: string;
 		price: number;
 		title: string;
 		category: string;
-		availabilityStatus: string;
+		availability: string;
 	};
 }) => {
 	return (
@@ -20,13 +20,13 @@ export const ProductCard = ({
 				className={`w-full bg-[#F7F7F7] h-1/2 rounded-[20px] flex justify-center items-center cursor-pointer group relative overflow-hidden`}>
 				<p
 					className={`${
-						availabilityStatus === "In Stock" ? "bg-[#7A9E7E]" : "bg-red-500"
+						availability === "In Stock" ? "bg-[#7A9E7E]" : "bg-red-500"
 					} text-white px-2.5 lg:px-3 rounded-md py-0.5 text-[10px] lg:text-[12px] absolute top-3 left-3 z-40`}>
-					{availabilityStatus}
+					{availability}
 				</p>
 				<div className="relative w-3/4 lg:w-full h-80 lg:h-60">
 					<Image
-						src={images[0]}
+						src={image}
 						fill
 						className={`pointer-events-none transition-all object-contain ease-in-out duration-700 group-hover:scale-110`}
 						alt="Product-image"

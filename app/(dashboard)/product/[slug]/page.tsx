@@ -4,54 +4,72 @@ import Image from "next/image";
 import productImg from "@/app/assets/images/product.jpg";
 import { Icon } from "@iconify/react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "next/navigation";
+import { redirect, useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { setProducts } from "@/app/redux/ProductSlice";
 import getProducts from "@/app/libs/getProducts";
+import { fetchAllProducts } from "@/app/libs/fetchAllProducts";
+import { deleteProduct } from "@/app/libs/deleteProduct";
+import axios from "axios";
 export default function Page() {
+	const router = useRouter();
 	const { slug } = useParams();
 	const dispatch = useDispatch();
 	const products = useSelector((state: any) => state.products.list);
 	const singleProduct = products?.find((item) => item.id === Number(slug));
 	const [loading, setLoading] = useState(true);
 
-	// console.log("singleProduct:", singleProduct);
+	const handleDelete = async () => {
+		// const res = await deleteProduct(slug as string);
+
+		const res = await axios
+			.delete(
+				`https://698534a66964f10bf252980b.mockapi.io/products/${String(slug)}`,
+			)
+			.then((res) => res.data)
+			.catch((err) => err.message);
+
+		// console.log("res, is", res);
+
+		if (res) {
+			console.log("res is", res);
+			const updatedProducts = await getProducts();
+			dispatch(setProducts(updatedProducts));
+			alert("Product Deleted");
+			router.push("/");
+		}
+	};
 
 	useEffect(() => {
-		const fetchProducts = async () => {
-			const products = await getProducts();
-			if (products.products && products.products.length > 0) {
-				setLoading(false);
-				dispatch(setProducts(products.products));
-			} else {
-				setLoading(false);
-				console.log("No products found.");
+		const fetchData = async () => {
+			const products = await fetchAllProducts();
+			if (products) {
+				dispatch(setProducts(products));
 			}
-			return products;
+			setLoading(false);
 		};
-
-		fetchProducts();
+		fetchData();
 	}, []);
 
 	if (loading) {
 		return (
-			<div className="w-full px-3 lg:px-20 pt-22 pb-10">Loading Product...</div>
+			<div className="w-full px-3 lg:px-20 pt-26 pb-10">Loading Product...</div>
 		);
 	}
 
 	if (!singleProduct) {
 		return (
-			<div className="w-full px-3 lg:px-20 pt-22 pb-10">Product not found.</div>
+			<div className="w-full px-3 lg:px-20 pt-26 pb-10">Product not found.</div>
 		);
 	}
 
 	return (
-		<div className="w-full px-3 lg:px-20 pt-22 pb-10 bg-[#f7f7f7]">
+		<div className="w-full px-3 lg:px-20 pt-26 pb-10 bg-[#f7f7f7]">
 			<h2 className="text-lg lg:text-2xl font-semibold">Product Details</h2>
 			<div className="grid gap-8 lg:gap-20 lg:grid-cols-2 mt-4 w-full min-h-dvh">
 				<div className="lg:w-full relative bg-[#e5ebe7c7] shadow rounded-xl h-96 lg:h-auto">
 					<Image
-						src={singleProduct?.images[0]}
+						src={singleProduct?.image}
 						alt="Product Image"
 						fill
 						className="object-contain"
@@ -63,7 +81,10 @@ export default function Page() {
 					</p>
 					<div className="flex space-x-4">
 						<span>⭐⭐⭐⭐⭐</span>
-						<span>{singleProduct?.rating} reviews</span>
+						<span>
+							{singleProduct?.rating ? singleProduct?.rating : "No review"}{" "}
+							reviews
+						</span>
 					</div>
 					<p className="text-2xl lg:text-3xl font-semibold mt-2">
 						${singleProduct?.price}
@@ -86,7 +107,9 @@ export default function Page() {
 							<Icon icon="iconamoon:edit-duotone" />
 							<span>Edit</span>
 						</div>
-						<div className="bg-red-700 text-white text-base py-1 px-3.5 rounded-sm flex items-center justify-center space-x-2 cursor-pointer">
+						<div
+							onClick={handleDelete}
+							className="bg-red-700 text-white text-base py-1 px-3.5 rounded-sm flex items-center justify-center space-x-2 cursor-pointer">
 							<Icon icon="material-symbols:delete-outline-rounded" />
 							<span>Delete</span>
 						</div>

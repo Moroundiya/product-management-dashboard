@@ -12,7 +12,7 @@ export const PaginatedList = ({
 	search: string;
 	sort: string;
 }) => {
-	const [page, setPage] = useState(1);
+	const [page, setPage] = useState<number>(1);
 	const itemsPerPage = 8;
 	const products = useSelector((state: any) => state.products.list) || [];
 

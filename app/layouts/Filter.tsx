@@ -12,7 +12,7 @@ export default function Filter({
 	setSort: (value: string) => void;
 }) {
 	return (
-		<div className="w-full px-3 space-y-3 lg:space-y-0 lg:px-20 lg:flex items-center justify-between pt-22 pb-10">
+		<div className="w-full px-3 space-y-3 lg:space-y-0 lg:px-20 lg:flex items-center justify-between pt-26 pb-10">
 			<div className="flex items-center">
 				<div className="flex items-center">
 					<Icon
@@ -25,10 +25,13 @@ export default function Filter({
 				</div>
 				<Select
 					className="w-50 lg:w-[256px] text-sm lg:text-base"
-					placeholder="Select one"
-					onChange={(value) => setSort(value as string)}>
+					onChange={(value) => setSort(value as string)}
+					defaultValue="latest">
 					<Select.Trigger className="ms-4 h-10 rounded-lg text-sm lg:text-base outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0">
-						<Select.Value className="text-sm lg:text-base" />
+						<Select.Value
+							className="text-sm lg:text-base"
+							defaultValue="latest"
+						/>
 						<Select.Indicator />
 					</Select.Trigger>
 					<Select.Popover>

@@ -7,34 +7,42 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/ProductSlice";
 import { PaginatedList } from "../components/Pagination";
+import { AddProduct } from "./Modals/AddProduct";
+import { fetchAllProducts } from "../libs/fetchAllProducts";
 
 export default function Products({
 	search,
 	sort,
+	openAddModal,
+	setOpenAddModal,
 }: {
 	search: string;
 	sort: string;
+	openAddModal: boolean;
+	setOpenAddModal: (open: boolean) => void;
 }) {
+	const products = useSelector((state: any) => state.products.list) || [];
 	const dispatch = useDispatch();
-	const products = useSelector((state: any) => state.products.list);
 	useEffect(() => {
-		const fetchProducts = async () => {
-			const products = await getProducts();
-			if (products.products && products.products.length > 0) {
-				dispatch(setProducts(products.products));
-			} else {
-				console.log("No products found.");
+		const fetchData = async () => {
+			const products = await fetchAllProducts();
+			if (products) {
+				dispatch(setProducts(products));
 			}
-			return products;
 		};
-
-		fetchProducts();
+		fetchData();
 	}, []);
 
 	return (
 		<>
+			<AddProduct
+				openAddModal={openAddModal}
+				setOpenAddModal={setOpenAddModal}
+			/>
 			<div className="w-full px-3 lg:px-20 mb-5">
-				<button className="bg-[#7A9E7E] text-white text-sm font-semibold flex justify-center items-center space-x-1 w-fit px-3 py-2 rounded-sm cursor-pointer">
+				<button
+					onClick={() => setOpenAddModal(true)}
+					className="bg-[#7A9E7E] text-white text-sm font-semibold flex justify-center items-center space-x-1 w-fit px-3 py-2 rounded-sm cursor-pointer">
 					<Icon
 						icon="gridicons:add-outline"
 						className="text-2xl"

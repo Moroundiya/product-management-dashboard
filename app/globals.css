@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+
+
+.select-no-flash {
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.select-no-flash * {
+    -webkit-tap-highlight-color: transparent;
+}
