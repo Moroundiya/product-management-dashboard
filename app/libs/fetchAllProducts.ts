@@ -18,6 +18,4 @@ export const fetchAllProducts = async () => {
 	} else {
 		return "No products found.";
 	}
-
-	return fetchAllProducts;
 };

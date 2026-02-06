@@ -1,5 +1,4 @@
 import axios from "axios";
-import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {

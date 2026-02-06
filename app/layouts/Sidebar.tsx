@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-export default function Slidebar({
+export default function Sidebar({
 	showSidebar,
 	setShowSidebar,
 }: {

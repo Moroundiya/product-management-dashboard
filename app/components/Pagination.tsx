@@ -20,7 +20,7 @@ export const PaginatedList = ({
 		let items = products;
 
 		if (search) {
-			items = items.filter((product) =>
+			items = items.filter((product: any) =>
 				product.title.toLowerCase().includes(search.toLowerCase()),
 			);
 		}

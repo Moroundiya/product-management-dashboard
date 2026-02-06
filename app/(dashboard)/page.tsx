@@ -19,8 +19,6 @@ export default function Home() {
 				openAddModal={openAddModal}
 				setOpenAddModal={setOpenAddModal}
 			/>
-
-			{/* <PaginatedList /> */}
 		</div>
 	);
 }

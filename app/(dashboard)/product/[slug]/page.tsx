@@ -1,25 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import productImg from "@/app/assets/images/product.jpg";
 import { Icon } from "@iconify/react";
 import { useDispatch, useSelector } from "react-redux";
-import { redirect, useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { setProducts } from "@/app/redux/ProductSlice";
-import getProducts from "@/app/libs/getProducts";
 import { fetchAllProducts } from "@/app/libs/fetchAllProducts";
-import { deleteProduct } from "@/app/libs/deleteProduct";
-import axios from "axios";
 import { DeleteProduct } from "@/app/layouts/Modals/DeleteProduct";
+import { EditProduct } from "@/app/layouts/Modals/EditProduct";
+
 export default function Page() {
-	const router = useRouter();
 	const { slug } = useParams();
 	const dispatch = useDispatch();
 	const products = useSelector((state: any) => state.products.list);
 	const singleProduct = products?.find((item) => item.id === Number(slug));
 	const [loading, setLoading] = useState(true);
 	const [openDeleteModal, setOpenDeleteModal] = useState(false);
+	const [openEditModal, setOpenEditModal] = useState(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -51,6 +49,11 @@ export default function Page() {
 				setOpenDeleteModal={setOpenDeleteModal}
 				productTitle={singleProduct?.title}
 			/>
+			<EditProduct
+				openEditModal={openEditModal}
+				setOpenEditModal={setOpenEditModal}
+				product={singleProduct}
+			/>
 			<div className="w-full px-3 lg:px-20 pt-26 pb-10 bg-[#f7f7f7]">
 				<h2 className="text-lg lg:text-2xl font-semibold">Product Details</h2>
 				<div className="grid gap-8 lg:gap-20 lg:grid-cols-2 mt-4 w-full min-h-dvh">
@@ -67,10 +70,11 @@ export default function Page() {
 							{singleProduct?.title}
 						</p>
 						<div className="flex space-x-4">
-							<span>⭐⭐⭐⭐⭐</span>
+							<span className={`${singleProduct?.rating ? "block" : "hidden"}`}>
+								⭐⭐⭐⭐⭐
+							</span>
 							<span>
-								{singleProduct?.rating ? singleProduct?.rating : "No review"}{" "}
-								reviews
+								{singleProduct?.rating ? singleProduct?.rating : "No review"}
 							</span>
 						</div>
 						<p className="text-2xl lg:text-3xl font-semibold mt-2">
@@ -90,7 +94,11 @@ export default function Page() {
 							)}
 						</p>
 						<div className="mt-2 flex items-center space-x-5">
-							<div className="bg-yellow-400 text-white text-base py-1 px-3.5 rounded-sm flex items-center justify-center space-x-2 cursor-pointer">
+							<div
+								onClick={() => {
+									setOpenEditModal(true);
+								}}
+								className="bg-yellow-400 text-white text-base py-1 px-3.5 rounded-sm flex items-center justify-center space-x-2 cursor-pointer">
 								<Icon icon="iconamoon:edit-duotone" />
 								<span>Edit</span>
 							</div>

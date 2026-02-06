@@ -1,14 +1,14 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import Slidebar from "./Slidebar";
+import Sidebar from "./Sidebar";
 import Link from "next/link";
 
 export default function Navbar() {
 	const [showSidebar, setShowSidebar] = useState(false);
 	return (
 		<nav className="bg-[#6B8F71] h-16 px-3 text-white fixed z-50 w-full top-0 left-0 flex justify-between items-center lg:px-20">
-			<Slidebar
+			<Sidebar
 				showSidebar={showSidebar}
 				setShowSidebar={setShowSidebar}
 			/>

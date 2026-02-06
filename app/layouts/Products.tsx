@@ -2,7 +2,6 @@
 
 import { Icon } from "@iconify/react";
 import Skeleton from "./Skeleton";
-import getProducts from "../libs/getProducts";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/ProductSlice";

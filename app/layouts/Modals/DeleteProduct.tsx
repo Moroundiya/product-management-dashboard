@@ -12,6 +12,10 @@ export function DeleteProduct({
 	openDeleteModal,
 	setOpenDeleteModal,
 	productTitle,
+}: {
+	openDeleteModal: boolean;
+	setOpenDeleteModal: (open: boolean) => void;
+	productTitle: string;
 }) {
 	const router = useRouter();
 	const dispatch = useDispatch();
