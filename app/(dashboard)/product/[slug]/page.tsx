@@ -88,7 +88,9 @@ export default function Page() {
 						<p className="flex space-x-2 items-center">
 							<span className="text-gray-400">TAGS:</span>
 							{singleProduct?.tags && singleProduct.tags.length > 0 ? (
-								singleProduct?.tags.map((tag) => <span key={tag}>{tag}</span>)
+								singleProduct?.tags.map((tag: any) => (
+									<span key={tag}>{tag}</span>
+								))
 							) : (
 								<span>No tags available</span>
 							)}
