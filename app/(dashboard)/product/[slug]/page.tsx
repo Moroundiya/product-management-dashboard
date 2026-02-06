@@ -14,10 +14,10 @@ export default function Page() {
 	const { slug } = useParams();
 	const dispatch = useDispatch();
 	const products = useSelector((state: any) => state.products.list);
-	const singleProduct = products?.find((item) => item.id === Number(slug));
-	const [loading, setLoading] = useState(true);
-	const [openDeleteModal, setOpenDeleteModal] = useState(false);
-	const [openEditModal, setOpenEditModal] = useState(false);
+	const singleProduct = products?.find((item: any) => item.id === Number(slug));
+	const [loading, setLoading] = useState<boolean>(true);
+	const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
+	const [openEditModal, setOpenEditModal] = useState<boolean>(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
