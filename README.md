@@ -81,20 +81,20 @@ app/
 <h3>ScreenShots</h3>
 
 <p align="center">
-  <img src="./public/images/products.png" width="900" />
+  <img src="/public/images/products.png" width="900" />
 </p>
 
 <p align="center">
-   <img src="./public/images/product-details.png" width="900" />
+   <img src="/public/images/product-details.png" width="900" />
 </p>
 
 <p align="center">
-   <img src="./public/images/add-product.png" width="900" />
+   <img src="/public/images/add-product.png" width="900" />
 </p>
 
 <p align="center">
-   <img src="./public/images/products-mobile.png" width="900" />
+   <img src="/public/images/products-mobile.png" width="900" />
 </p>
 <p align="center">
-   <img src="./public/images/single-product-mobile.png" width="900" />
+   <img src="/public/images/single-product-mobile.png" width="900" />
 </p>
