@@ -32,7 +32,7 @@ export default function Slidebar({
 				<div className="w-full h-auto mt-16 text-black text-base font-medium">
 					<div className="flex flex-col space-y-5">
 						<Link href="/">Dashboard</Link>
-						<Link href="/products">All Products</Link>
+						<Link href="/">All Products</Link>
 						<Link href="/profile">Profile</Link>
 					</div>
 				</div>
